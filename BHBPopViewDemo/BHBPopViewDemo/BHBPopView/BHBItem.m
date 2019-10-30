@@ -10,12 +10,12 @@
 
 @implementation BHBItem
 
--(instancetype)initWithTitle:(NSString *)title Icon:(NSString *)icon{
-    self = [super init];
-    if (self) {
+- (instancetype)initWithTitle:(NSString *)title Icon:(NSString *)icon {
+    if (self = [super init]) {
         self.title = title;
         self.icon = icon;
     }
+    
     return self;
 }
 

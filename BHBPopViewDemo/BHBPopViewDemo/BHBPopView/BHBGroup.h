@@ -8,8 +8,8 @@
 
 #import "BHBItem.h"
 
-@interface BHBGroup : BHBItem
-
-@property (nonatomic, strong) NSArray<BHBItem *> * items;
-
-@end
+//@interface BHBGroup : BHBItem
+//
+//@property (nonatomic, strong) NSArray<BHBItem *> * items;
+//
+//@end

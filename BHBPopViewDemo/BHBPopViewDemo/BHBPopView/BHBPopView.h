@@ -15,7 +15,7 @@
 #endif
 
 #import <UIKit/UIKit.h>
-#import "BHBGroup.h"
+#import "BHBItem.h"
 
 typedef void (^DidSelectItemBlock) (BHBItem * item);
 

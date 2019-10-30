@@ -161,30 +161,30 @@
 		F755025E1B7E148600DD6A40 /* BHBPopView */ = {
 			isa = PBXGroup;
 			children = (
-				F755025F1B7E148600DD6A40 /* Resource */,
-				F784CC1A1B7E21DC0092AD64 /* BHBPopView.h */,
-				F784CC1B1B7E21DC0092AD64 /* BHBPopView.m */,
 				F74F04BD1B7F3E5100B5747B /* BHBBottomBar.h */,
 				F74F04BE1B7F3E5100B5747B /* BHBBottomBar.m */,
 				F74F04CD1B7F95BD00B5747B /* BHBCenterView.h */,
 				F74F04CE1B7F95BD00B5747B /* BHBCenterView.m */,
-				F74F04D01B801FBD00B5747B /* BHBItem.h */,
-				F74F04D11B801FBD00B5747B /* BHBItem.m */,
-				F71CD43D1C993FDC00B94F6F /* BHBGroup.h */,
-				F71CD43E1C993FDC00B94F6F /* BHBGroup.m */,
 				F74F04CA1B7F872200B5747B /* BHBCustomBtn.h */,
 				F74F04CB1B7F872200B5747B /* BHBCustomBtn.m */,
+				F71CD43D1C993FDC00B94F6F /* BHBGroup.h */,
+				F71CD43E1C993FDC00B94F6F /* BHBGroup.m */,
+				F74F04D01B801FBD00B5747B /* BHBItem.h */,
+				F74F04D11B801FBD00B5747B /* BHBItem.m */,
 				F74F04C01B7F400700B5747B /* BHBPlaySoundTool.h */,
 				F74F04C11B7F400700B5747B /* BHBPlaySoundTool.m */,
-				F784CC201B7ED0FA0092AD64 /* UIImage+BHBEffects.h */,
-				F784CC211B7ED0FA0092AD64 /* UIImage+BHBEffects.m */,
-				F784CC231B7ED8DE0092AD64 /* UIView+BHBAnimation.h */,
-				F784CC241B7ED8DE0092AD64 /* UIView+BHBAnimation.m */,
-				F74F04BA1B7EE92600B5747B /* UIImageView+BHBSetImage.h */,
-				F74F04BB1B7EE92600B5747B /* UIImageView+BHBSetImage.m */,
+				F784CC1A1B7E21DC0092AD64 /* BHBPopView.h */,
+				F784CC1B1B7E21DC0092AD64 /* BHBPopView.m */,
 				F74F04C31B7F40EB00B5747B /* BHBSingleton.h */,
+				F755025F1B7E148600DD6A40 /* Resource */,
 				F74F04C71B7F78A000B5747B /* UIButton+BHBSetImage.h */,
 				F74F04C81B7F78A000B5747B /* UIButton+BHBSetImage.m */,
+				F784CC201B7ED0FA0092AD64 /* UIImage+BHBEffects.h */,
+				F784CC211B7ED0FA0092AD64 /* UIImage+BHBEffects.m */,
+				F74F04BA1B7EE92600B5747B /* UIImageView+BHBSetImage.h */,
+				F74F04BB1B7EE92600B5747B /* UIImageView+BHBSetImage.m */,
+				F784CC231B7ED8DE0092AD64 /* UIView+BHBAnimation.h */,
+				F784CC241B7ED8DE0092AD64 /* UIView+BHBAnimation.m */,
 			);
 			path = BHBPopView;
 			sourceTree = "<group>";
@@ -247,6 +247,7 @@
 				TargetAttributes = {
 					F75502341B7E146C00DD6A40 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 97ZDU8T5WN;
 					};
 					F755024D1B7E146C00DD6A40 = {
 						CreatedOnToolsVersion = 6.4;
@@ -259,6 +260,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -439,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 97ZDU8T5WN;
 				INFOPLIST_FILE = BHBPopViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -450,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 97ZDU8T5WN;
 				INFOPLIST_FILE = BHBPopViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -10,21 +10,12 @@
 
 @implementation BHBCustomBtn
 
-
-- (CGRect)imageRectForContentRect:(CGRect)contentRect{
-    CGRect rect = CGRectMake(0, (contentRect.size.height - ICONHEIGHT - TITLEHEIGHT) / 2, contentRect.size.width, ICONHEIGHT);
-    return rect;
+- (CGRect)imageRectForContentRect:(CGRect)contentRect {
+    return CGRectMake(0, 0, contentRect.size.width, ICONHEIGHT);
 }
 
-- (CGRect)titleRectForContentRect:(CGRect)contentRect
-{
-    CGRect rect = CGRectMake(0, (contentRect.size.height - ICONHEIGHT - TITLEHEIGHT) / 2 + ICONHEIGHT, contentRect.size.width, TITLEHEIGHT);
-    return rect;
-}
-
--(void)setHighlighted:(BOOL)highlighted
-{
-    
+- (CGRect)titleRectForContentRect:(CGRect)contentRect {
+    return CGRectMake(0, ICONHEIGHT + 10, contentRect.size.width, TITLEHEIGHT);
 }
 
 - (void)dealloc{

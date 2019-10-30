@@ -13,26 +13,19 @@
 
 @interface BHBBottomBar ()
 
-@property (nonatomic,weak) UIImageView * background;
+//@property (nonatomic,weak) UIImageView * background;
 @property (nonatomic,weak) UIButton * closeBtn;
-@property (nonatomic,weak) UIButton * backBtn;
-@property (nonatomic,weak) UIButton * secondCloseBtn;
+//@property (nonatomic,weak) UIButton * backBtn;
+//@property (nonatomic,weak) UIButton * secondCloseBtn;
 
 @end
 
 @implementation BHBBottomBar
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        UIImageView * back = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-        [back bhb_setImageWithResourcePath:@"images.bundle/tabbar_compose_below_background" AutoSize:NO];
-        [self addSubview:back];
-        self.background = back;
-        
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(0, 0, BHBBOTTOMHEIGHT / 2, BHBBOTTOMHEIGHT / 2);
+        btn.frame = CGRectMake(0, 0, BHBBOTTOMHEIGHT, BHBBOTTOMHEIGHT);
         btn.center = CGPointMake(frame.size.width / 2, frame.size.height / 2);
         [btn bhb_setImage:@"images.bundle/tabbar_compose_background_icon_add"];
         btn.userInteractionEnabled = NO;
@@ -40,25 +33,26 @@
         [btn RevolvingWithTime:.25 andDelta:(M_PI_4)];
         self.closeBtn = btn;
         
-        UIButton * backbtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        backbtn.frame = CGRectMake(0, 0, frame.size.width / 2, frame.size.height);
-        [backbtn bhb_setImage:@"images.bundle/tabbar_compose_background_icon_return"];
-        [backbtn bhb_setBGImage:@"images.bundle/tabbar_compose_left_button"];
-        [self addSubview:backbtn];
-        [backbtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-        backbtn.alpha = 0;
-        backbtn.userInteractionEnabled = NO;
-        self.backBtn = backbtn;
+//        UIButton * backbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        backbtn.frame = CGRectMake(0, 0, frame.size.width / 2, frame.size.height);
+//        [backbtn bhb_setImage:@"images.bundle/tabbar_compose_background_icon_return"];
+//        [backbtn bhb_setBGImage:@"images.bundle/tabbar_compose_left_button"];
+//        [self addSubview:backbtn];
+//        [backbtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+//        backbtn.alpha = 0;
+//        backbtn.userInteractionEnabled = NO;
+//        self.backBtn = backbtn;
         
-        UIButton * secCloseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        secCloseBtn.frame = CGRectMake(frame.size.width / 2, 0, frame.size.width / 2, frame.size.height);
-        [secCloseBtn bhb_setImage:@"images.bundle/tabbar_compose_background_icon_close"];
-        [secCloseBtn bhb_setBGImage:@"images.bundle/tabbar_compose_right_button"];
-        [self addSubview:secCloseBtn];
-        [secCloseBtn addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
-        secCloseBtn.alpha = 0;
-        secCloseBtn.userInteractionEnabled = NO;
-        self.secondCloseBtn = secCloseBtn;
+//        UIButton *secCloseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        secCloseBtn.frame = CGRectMake(0, 0, BHBBOTTOMHEIGHT, BHBBOTTOMHEIGHT);
+//        secCloseBtn.center = CGPointMake(frame.size.width / 2, frame.size.height / 2);
+//        [secCloseBtn bhb_setImage:@"images.bundle/tabbar_compose_background_icon_close"];
+////        [secCloseBtn bhb_setBGImage:@"images.bundle/tabbar_compose_right_button"];
+//        [self addSubview:secCloseBtn];
+//        [secCloseBtn addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
+//        secCloseBtn.alpha = 0;
+//        secCloseBtn.userInteractionEnabled = NO;
+//        self.secondCloseBtn = secCloseBtn;
         
     }
     return self;
@@ -86,18 +80,18 @@
     if (isMoreBar) {
         [UIView animateWithDuration:.25 animations:^{
             self.closeBtn.alpha = 0;
-            self.backBtn.alpha = 1;
-            self.secondCloseBtn.alpha = 1;
-            self.backBtn.userInteractionEnabled = YES;
-            self.secondCloseBtn.userInteractionEnabled = YES;
+//            self.backBtn.alpha = 1;
+//            self.secondCloseBtn.alpha = 1;
+//            self.backBtn.userInteractionEnabled = YES;
+//            self.secondCloseBtn.userInteractionEnabled = YES;
         }];
     }else{
         [UIView animateWithDuration:.25 animations:^{
             self.closeBtn.alpha = 1;
-            self.backBtn.alpha = 0;
-            self.secondCloseBtn.alpha = 0;
-            self.backBtn.userInteractionEnabled = NO;
-            self.secondCloseBtn.userInteractionEnabled = NO;
+//            self.backBtn.alpha = 0;
+//            self.secondCloseBtn.alpha = 0;
+//            self.backBtn.userInteractionEnabled = NO;
+//            self.secondCloseBtn.userInteractionEnabled = NO;
         }];
     }
 }

@@ -11,14 +11,14 @@
 #import "UIButton+BHBSetImage.h"
 #import "BHBItem.h"
 #import "UIView+BHBAnimation.h"
-#import "BHBGroup.h"
+//#import "BHBGroup.h"
 
 @interface BHBCenterView ()
 
 @property (nonatomic,strong) NSMutableArray * visableBtnArray;
 @property (nonatomic,strong) NSMutableArray * homeBtns;
-@property (nonatomic,strong) NSMutableArray * moreBtns;
-@property (nonatomic,strong) BHBGroup * currentGroup;
+//@property (nonatomic,strong) NSMutableArray * moreBtns;
+//@property (nonatomic,strong) BHBGroup * currentGroup;
 @property (nonatomic,assign) BOOL btnCanceled;
 
 @end
@@ -42,12 +42,12 @@
     return _visableBtnArray;
 }
 
-- (NSMutableArray *)moreBtns{
-    if (!_moreBtns) {
-        _moreBtns = [[NSMutableArray alloc] init];
-    }
-    return _moreBtns;
-}
+//- (NSMutableArray *)moreBtns{
+//    if (!_moreBtns) {
+//        _moreBtns = [[NSMutableArray alloc] init];
+//    }
+//    return _moreBtns;
+//}
 
 - (void)reloadData{
     //    NSAssert(self.delegate, @"BHBCenterView`s delegate was nil.");
@@ -55,9 +55,9 @@
     NSAssert([self.dataSource respondsToSelector:@selector(numberOfItemsWithCenterView:)], @"BHBCenterView`s was unimplementation numberOfItemsWithCenterView:.");
     NSAssert([self.dataSource respondsToSelector:@selector(itemWithCenterView:item:)], @"BHBCenterView`s was unimplementation itemWithCenterView:item:.");
     [self.homeBtns makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.moreBtns makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
+//    [self.moreBtns makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
     [self.homeBtns removeAllObjects];
-    [self.moreBtns removeAllObjects];
+//    [self.moreBtns removeAllObjects];
     NSUInteger count = [self.dataSource numberOfItemsWithCenterView:self];
     NSMutableArray * items = [NSMutableArray array];
     for (int i = 0; i < count; i ++) {
@@ -68,11 +68,11 @@
 }
 
 - (void)layoutBtnsWith:(NSArray *)items isMore:(BOOL)isMore{
-    if(isMore){
-        [self.moreBtns makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        [self.moreBtns removeAllObjects];
-    }
-    BHBItem * item;
+//    if(isMore){
+//        [self.moreBtns makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//        [self.moreBtns removeAllObjects];
+//    }
+    BHBItem *item;
     for (int i = 0; i < items.count; i ++) {
         item = items[i];
         BHBCustomBtn * btn = [BHBCustomBtn buttonWithType:UIButtonTypeCustom];
@@ -80,24 +80,28 @@
         [btn.imageView setContentMode:UIViewContentModeCenter];
         [btn setTitle:item.title forState:UIControlStateNormal];
         btn.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor colorWithRed:17 / 255.0 green:19 / 255.0 blue:56 / 255.0 alpha:1] forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:14];
-        CGFloat x = (i % 3) * self.frame.size.width / 3.0;
-        CGFloat y = (i / 3) * self.frame.size.height / 2.0;
-        if (isMore) {
-            x += [UIScreen mainScreen].bounds.size.width;
-            [self.moreBtns addObject:btn];
-        }
-        else {
-            [self.homeBtns addObject:btn];
-        }
-        CGFloat width = self.frame.size.width / 3.0;
-        CGFloat height = self.frame.size.height / 2;
+        
+        CGFloat w = self.frame.size.width / 3.0;
+        CGFloat h = 78.0;
+        CGFloat x = (i % 3) * w;
+        CGFloat y = (i / 3) * (h + 20.0);
+//        if (isMore) {
+//            x += [UIScreen mainScreen].bounds.size.width;
+//            [self.moreBtns addObject:btn];
+//        } else {
+//            [self.homeBtns addObject:btn];
+//        }
+        
+        if (isMore) { x += [UIScreen mainScreen].bounds.size.width; }
+        [self.homeBtns addObject:btn];
+        
+        btn.frame = CGRectMake(x, y, w, h);
         [btn addTarget:self action:@selector(didClickBtn:) forControlEvents:UIControlEventTouchUpInside];
         [btn addTarget:self action:@selector(didTouchBtn:) forControlEvents:UIControlEventTouchDown];
         [btn addTarget:self action:@selector(didCancelBtn:) forControlEvents:UIControlEventTouchDragInside];
         [self addSubview:btn];
-        btn.frame = CGRectMake(x, y, width, height);
     }
 }
 
@@ -130,27 +134,27 @@
         index = [self.homeBtns indexOfObject:btn];
         item = [self.dataSource itemWithCenterView:self item:index];
     }
-    if ([self.moreBtns containsObject:btn]) {
-        index = [self.moreBtns indexOfObject:btn];
-        item = [self.currentGroup.items objectAtIndex:index];
-    }
+//    if ([self.moreBtns containsObject:btn]) {
+//        index = [self.moreBtns indexOfObject:btn];
+//        item = [self.currentGroup.items objectAtIndex:index];
+//    }
     [btn scalingWithTime:.25 andscal:1];
-    if([item isKindOfClass:[BHBGroup class]]){
-        BHBGroup * group = (BHBGroup *)item;
-        self.currentGroup = group;
-        if (!self.delegate || ![self.delegate respondsToSelector:@selector(didSelectMoreWithCenterView:andItem:)]) {
-            return;
-        }
-        [self layoutBtnsWith:group.items isMore:YES];
-        [self.visableBtnArray removeAllObjects];
-        [self.moreBtns enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [self.visableBtnArray addObject:obj];
-        }];
-        [self setContentOffset:CGPointMake(self.frame.size.width, 0) animated:YES];
-        [self.delegate didSelectMoreWithCenterView:self andItem:group];
-        return;
-    }
-    else{
+//    if([item isKindOfClass:[BHBGroup class]]){
+//        BHBGroup * group = (BHBGroup *)item;
+//        self.currentGroup = group;
+//        if (!self.delegate || ![self.delegate respondsToSelector:@selector(didSelectMoreWithCenterView:andItem:)]) {
+//            return;
+//        }
+//        [self layoutBtnsWith:group.items isMore:YES];
+//        [self.visableBtnArray removeAllObjects];
+//        [self.moreBtns enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//            [self.visableBtnArray addObject:obj];
+//        }];
+//        [self setContentOffset:CGPointMake(self.frame.size.width, 0) animated:YES];
+//        [self.delegate didSelectMoreWithCenterView:self andItem:group];
+//        return;
+//    }
+    if([item isKindOfClass:[BHBItem class]]) {
         [btn scalingWithTime:.25 andscal:1.7];
         [btn fadeOutWithTime:.25];
         [self.visableBtnArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -166,7 +170,6 @@
         [self.delegate didSelectItemWithCenterView:self andItem:item];
     }
 }
-
 
 - (void)dismis{
     [self btnPositonAnimation:YES];
