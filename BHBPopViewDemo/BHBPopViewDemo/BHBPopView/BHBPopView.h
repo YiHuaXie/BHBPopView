@@ -21,16 +21,16 @@ typedef void (^DidSelectItemBlock) (BHBItem * item);
 
 @interface BHBPopView : UIView
 
-/**
- *  直接显示一个popView在某个view上
- *
- *  @param view       父view
- *  @param imageArray 图标数组
- *  @param titles     标题数组
- *  @param block      回调
- *  @return pop视图
- */
-+ (BHB_INSTANCETYPE)showToView:(UIView *)view andImages:(NSArray *)imageArray andTitles:(NSArray *)titles andSelectBlock:(DidSelectItemBlock)block;
+///**
+// *  直接显示一个popView在某个view上
+// *
+// *  @param view       父view
+// *  @param imageArray 图标数组
+// *  @param titles     标题数组
+// *  @param block      回调
+// *  @return pop视图
+// */
+//+ (BHB_INSTANCETYPE)showToView:(UIView *)view andImages:(NSArray *)imageArray andTitles:(NSArray *)titles andSelectBlock:(DidSelectItemBlock)block;
 /**
  *  如果显示一个带more功能的，请使用此方法
  *

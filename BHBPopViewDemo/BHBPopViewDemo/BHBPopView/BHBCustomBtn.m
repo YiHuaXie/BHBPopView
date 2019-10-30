@@ -19,7 +19,7 @@
 }
 
 - (void)dealloc{
-    NSLog(@"BHBCustomBtn");
+//    NSLog(@"BHBCustomBtn");
 }
 
 @end

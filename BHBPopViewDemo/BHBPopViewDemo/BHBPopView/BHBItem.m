@@ -20,7 +20,7 @@
 }
 
 - (void)dealloc{
-    NSLog(@"BHBItem");
+//    NSLog(@"BHBItem");
 }
 
 @end

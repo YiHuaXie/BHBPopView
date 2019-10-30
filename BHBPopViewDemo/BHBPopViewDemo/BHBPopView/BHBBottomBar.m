@@ -104,7 +104,7 @@
 }
 
 - (void)dealloc{
-    NSLog(@"BHBBottomBar");
+//    NSLog(@"BHBBottomBar");
 }
 
 @end

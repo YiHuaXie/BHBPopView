@@ -7,10 +7,7 @@
 //
 
 #import "BHBPopView.h"
-//#import "UIImage+BHBEffects.h"
 #import "UIView+BHBAnimation.h"
-//#import "UIImageView+BHBSetImage.h"
-//#import "BHBPlaySoundTool.h"
 #import "BHBBottomBar.h"
 #import "BHBCustomBtn.h"
 #import "UIButton+BHBSetImage.h"
@@ -46,7 +43,10 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_didViewTouched:)]];
+//        [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_didViewTouched:)]];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_didViewTouched:)];
+        tap.numberOfTouchesRequired = 1;
+        [self addGestureRecognizer:tap];
         
         UIImageView * iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [self addSubview:iv];
@@ -59,7 +59,6 @@
             [weakSelf.centerView scrollBack];
         };
         bar.closeClick = ^{
-//            [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"close"];
             [weakSelf hideItems];
             [weakSelf hide];
         };
@@ -79,6 +78,7 @@
 }
 
 - (void)_didViewTouched:(UITapGestureRecognizer *)tap {
+    self.userInteractionEnabled = NO;
     [self.bottomBar btnResetPosition];
     [self.bottomBar fadeOutWithTime:.25];
     [self hideItems];
@@ -98,8 +98,8 @@
 }
 
 + (BHB_INSTANCETYPE)showToView:(UIView *)view withItems:(NSArray *)array andSelectBlock:(DidSelectItemBlock)block{
-//    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"open"];
-    [self viewNotEmpty:view];
+    if (!view) { return nil; }
+    
     BHBPopView * popView = [[BHBPopView alloc]initWithFrame:view.bounds];
     popView.background.image = [self imageWithView:view];
     [view addSubview:popView];
@@ -107,17 +107,8 @@
     [popView fadeInWithTime:0.25];
     popView.items = array;
     [popView showItems];
+    
     return popView;
-}
-
-+ (BHB_INSTANCETYPE)showToView:(UIView *)view andImages:(NSArray *)imageArray andTitles:(NSArray *)titles andSelectBlock:(DidSelectItemBlock)block{
-    NSUInteger count = imageArray.count;
-    NSMutableArray * items = [NSMutableArray array];
-    for (int i = 0; i < count; i++) {
-        BHBItem * item = [[BHBItem alloc]initWithTitle:titles[i] Icon:imageArray[i]];
-        [items addObject:item];
-    }
-    return [self showToView:view withItems:items andSelectBlock:block];
 }
 
 + (UIImage *)imageWithView:(UIView *)view{
@@ -136,71 +127,36 @@
     return colorImage;
 }
 
-+ (void)viewNotEmpty:(UIView *)view{
-    if (view == nil) {
-        view = (UIView *)[[UIApplication sharedApplication] delegate];
-    }
-}
-
-+ (void)hideFromView:(UIView *)view{
-    [self viewNotEmpty:view];
-    [view.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        UIView * subV = (UIView *)obj;
-        [subV isKindOfClass:[self class]];
-        [BHBPopView hideWithView:subV];
-    }];
-}
-
 - (void)hide{
     [BHBPopView hideWithView:self];
 }
 
-+ (void)hideWithView:(UIView *)view{
++ (void)hideWithView:(UIView *)view {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [view fadeOutWithTime:0.35];
     });
 }
 
-//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-////    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"close"];
-//    [self.bottomBar btnResetPosition];
-//    [self.bottomBar fadeOutWithTime:.25];
-//    [self hideItems];
-//    [self hide];
-//}
-
 #pragma mark centerview delegate and datasource
-- (NSInteger)numberOfItemsWithCenterView:(BHBCenterView *)centerView
-{
+
+- (NSInteger)numberOfItemsWithCenterView:(BHBCenterView *)centerView {
     return self.items.count;
 }
 
--(BHBItem *)itemWithCenterView:(BHBCenterView *)centerView item:(NSInteger)item
-{
+- (BHBItem *)itemWithCenterView:(BHBCenterView *)centerView item:(NSInteger)item {
     return self.items[item];
 }
 
--(void)didSelectItemWithCenterView:(BHBCenterView *)centerView andItem:(BHBItem *)item
-{
+- (void)didSelectItemWithCenterView:(BHBCenterView *)centerView andItem:(BHBItem *)item {
     if (self.selectBlock) {
         self.selectBlock(item);
     }
-//    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"open"];
+
     [self hide];
 }
 
-//- (void)didSelectMoreWithCenterView:(BHBCenterView *)centerView andItem:(BHBGroup *)group
-//{
-//    if (self.selectBlock) {
-//        self.selectBlock(group);
-//    }
-//    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"open"];
-//    self.bottomBar.isMoreBar = YES;
-//}
-
 - (void)dealloc{
-    NSLog(@"BHBPopView");
+//    NSLog(@"BHBPopView");
 }
 
 @end
