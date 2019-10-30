@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F71CD43F1C993FDC00B94F6F /* BHBGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CD43E1C993FDC00B94F6F /* BHBGroup.m */; };
-		F74F04BC1B7EE92600B5747B /* UIImageView+BHBSetImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F74F04BB1B7EE92600B5747B /* UIImageView+BHBSetImage.m */; };
 		F74F04BF1B7F3E5100B5747B /* BHBBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F74F04BE1B7F3E5100B5747B /* BHBBottomBar.m */; };
-		F74F04C21B7F400700B5747B /* BHBPlaySoundTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F74F04C11B7F400700B5747B /* BHBPlaySoundTool.m */; };
 		F74F04C91B7F78A000B5747B /* UIButton+BHBSetImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F74F04C81B7F78A000B5747B /* UIButton+BHBSetImage.m */; };
 		F74F04CC1B7F872200B5747B /* BHBCustomBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = F74F04CB1B7F872200B5747B /* BHBCustomBtn.m */; };
 		F74F04CF1B7F95BD00B5747B /* BHBCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F74F04CE1B7F95BD00B5747B /* BHBCenterView.m */; };
@@ -25,7 +22,6 @@
 		F75502621B7E148600DD6A40 /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F75502601B7E148600DD6A40 /* images.bundle */; };
 		F75502631B7E148600DD6A40 /* music.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F75502611B7E148600DD6A40 /* music.bundle */; };
 		F784CC1C1B7E21DC0092AD64 /* BHBPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = F784CC1B1B7E21DC0092AD64 /* BHBPopView.m */; };
-		F784CC221B7ED0FA0092AD64 /* UIImage+BHBEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F784CC211B7ED0FA0092AD64 /* UIImage+BHBEffects.m */; };
 		F784CC251B7ED8DE0092AD64 /* UIView+BHBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F784CC241B7ED8DE0092AD64 /* UIView+BHBAnimation.m */; };
 /* End PBXBuildFile section */
 
@@ -40,14 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F71CD43D1C993FDC00B94F6F /* BHBGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBGroup.h; sourceTree = "<group>"; };
-		F71CD43E1C993FDC00B94F6F /* BHBGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBGroup.m; sourceTree = "<group>"; };
-		F74F04BA1B7EE92600B5747B /* UIImageView+BHBSetImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+BHBSetImage.h"; sourceTree = "<group>"; };
-		F74F04BB1B7EE92600B5747B /* UIImageView+BHBSetImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+BHBSetImage.m"; sourceTree = "<group>"; };
 		F74F04BD1B7F3E5100B5747B /* BHBBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBBottomBar.h; sourceTree = "<group>"; };
 		F74F04BE1B7F3E5100B5747B /* BHBBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBBottomBar.m; sourceTree = "<group>"; };
-		F74F04C01B7F400700B5747B /* BHBPlaySoundTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBPlaySoundTool.h; sourceTree = "<group>"; };
-		F74F04C11B7F400700B5747B /* BHBPlaySoundTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBPlaySoundTool.m; sourceTree = "<group>"; };
 		F74F04C31B7F40EB00B5747B /* BHBSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHBSingleton.h; sourceTree = "<group>"; };
 		F74F04C71B7F78A000B5747B /* UIButton+BHBSetImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BHBSetImage.h"; sourceTree = "<group>"; };
 		F74F04C81B7F78A000B5747B /* UIButton+BHBSetImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BHBSetImage.m"; sourceTree = "<group>"; };
@@ -74,8 +64,6 @@
 		F75502611B7E148600DD6A40 /* music.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = music.bundle; sourceTree = "<group>"; };
 		F784CC1A1B7E21DC0092AD64 /* BHBPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBPopView.h; sourceTree = "<group>"; };
 		F784CC1B1B7E21DC0092AD64 /* BHBPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBPopView.m; sourceTree = "<group>"; };
-		F784CC201B7ED0FA0092AD64 /* UIImage+BHBEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BHBEffects.h"; sourceTree = "<group>"; };
-		F784CC211B7ED0FA0092AD64 /* UIImage+BHBEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BHBEffects.m"; sourceTree = "<group>"; };
 		F784CC231B7ED8DE0092AD64 /* UIView+BHBAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BHBAnimation.h"; sourceTree = "<group>"; };
 		F784CC241B7ED8DE0092AD64 /* UIView+BHBAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BHBAnimation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,22 +86,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE9319CC236958AA00161574 /* Unused */ = {
-			isa = PBXGroup;
-			children = (
-				F755025F1B7E148600DD6A40 /* Resource */,
-				F784CC201B7ED0FA0092AD64 /* UIImage+BHBEffects.h */,
-				F784CC211B7ED0FA0092AD64 /* UIImage+BHBEffects.m */,
-				F74F04C01B7F400700B5747B /* BHBPlaySoundTool.h */,
-				F74F04C11B7F400700B5747B /* BHBPlaySoundTool.m */,
-				F71CD43D1C993FDC00B94F6F /* BHBGroup.h */,
-				F71CD43E1C993FDC00B94F6F /* BHBGroup.m */,
-				F74F04BA1B7EE92600B5747B /* UIImageView+BHBSetImage.h */,
-				F74F04BB1B7EE92600B5747B /* UIImageView+BHBSetImage.m */,
-			);
-			path = Unused;
-			sourceTree = "<group>";
-		};
 		F755022C1B7E146C00DD6A40 = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +107,7 @@
 		F75502371B7E146C00DD6A40 /* BHBPopViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				AE9319CC236958AA00161574 /* Unused */,
+				F755025F1B7E148600DD6A40 /* Resource */,
 				F755025E1B7E148600DD6A40 /* BHBPopView */,
 				F755023C1B7E146C00DD6A40 /* AppDelegate.h */,
 				F755023D1B7E146C00DD6A40 /* AppDelegate.m */,
@@ -310,15 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F71CD43F1C993FDC00B94F6F /* BHBGroup.m in Sources */,
 				F784CC251B7ED8DE0092AD64 /* UIView+BHBAnimation.m in Sources */,
 				F75502411B7E146C00DD6A40 /* ViewController.m in Sources */,
 				F784CC1C1B7E21DC0092AD64 /* BHBPopView.m in Sources */,
-				F784CC221B7ED0FA0092AD64 /* UIImage+BHBEffects.m in Sources */,
-				F74F04C21B7F400700B5747B /* BHBPlaySoundTool.m in Sources */,
 				F74F04C91B7F78A000B5747B /* UIButton+BHBSetImage.m in Sources */,
 				F755023E1B7E146C00DD6A40 /* AppDelegate.m in Sources */,
-				F74F04BC1B7EE92600B5747B /* UIImageView+BHBSetImage.m in Sources */,
 				F755023B1B7E146C00DD6A40 /* main.m in Sources */,
 				F74F04D21B801FBD00B5747B /* BHBItem.m in Sources */,
 				F74F04CC1B7F872200B5747B /* BHBCustomBtn.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "BHBBottomBar.h"
-#import "UIImageView+BHBSetImage.h"
+//#import "UIImageView+BHBSetImage.h"
 #import "UIButton+BHBSetImage.h"
 #import "UIView+BHBAnimation.h"
 
