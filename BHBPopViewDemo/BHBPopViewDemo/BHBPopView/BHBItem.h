@@ -6,12 +6,12 @@
 //  Copyright (c) 2015年 毕洪博. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface BHBItem: NSObject
 
-@property (nonatomic,copy) NSString *title;
-@property (nonatomic,copy) NSString *icon;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *icon;
 
 - (instancetype)initWithTitle:(NSString *)title Icon:(NSString *)icon;
 
