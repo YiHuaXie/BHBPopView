@@ -44,10 +44,10 @@
 
 @implementation BHBPopView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_didViewTouched:)]];
+        
         UIImageView * iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [self addSubview:iv];
         self.background = iv;
@@ -78,10 +78,16 @@
     return self;
 }
 
+- (void)_didViewTouched:(UITapGestureRecognizer *)tap {
+    [self.bottomBar btnResetPosition];
+    [self.bottomBar fadeOutWithTime:.25];
+    [self hideItems];
+    [self hide];
+}
+
 - (void)removeitemsComplete{
     self.superview.userInteractionEnabled = YES;
 }
-
 
 - (void)showItems{
     [self.centerView reloadData];
@@ -151,18 +157,18 @@
 
 + (void)hideWithView:(UIView *)view{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    [view fadeOutWithTime:0.35];
+        [view fadeOutWithTime:0.35];
     });
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-//    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"close"];
-    [self.bottomBar btnResetPosition];
-    [self.bottomBar fadeOutWithTime:.25];
-    [self hideItems];
-    [self hide];
-}
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+////    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"close"];
+//    [self.bottomBar btnResetPosition];
+//    [self.bottomBar fadeOutWithTime:.25];
+//    [self hideItems];
+//    [self hide];
+//}
 
 #pragma mark centerview delegate and datasource
 - (NSInteger)numberOfItemsWithCenterView:(BHBCenterView *)centerView
