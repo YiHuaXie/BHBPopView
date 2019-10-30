@@ -10,9 +10,9 @@
 
 @interface UIImageView (BHBSetImage)
 
-- (void)bhb_setImage:(UIImage *)image;
-
-- (void)bhb_setImageWithResourcePath:(NSString *)path AutoSize:(BOOL)isAuto;
+//- (void)bhb_setImage:(UIImage *)image;
+//
+//- (void)bhb_setImageWithResourcePath:(NSString *)path AutoSize:(BOOL)isAuto;
 
 
 @end

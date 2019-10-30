@@ -10,7 +10,7 @@
 #import "UIImage+BHBEffects.h"
 #import "UIView+BHBAnimation.h"
 #import "UIImageView+BHBSetImage.h"
-#import "BHBPlaySoundTool.h"
+//#import "BHBPlaySoundTool.h"
 #import "BHBBottomBar.h"
 #import "BHBCustomBtn.h"
 #import "UIButton+BHBSetImage.h"
@@ -59,7 +59,7 @@
             [weakSelf.centerView scrollBack];
         };
         bar.closeClick = ^{
-            [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"close"];
+//            [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"close"];
             [weakSelf hideItems];
             [weakSelf hide];
         };
@@ -92,7 +92,7 @@
 }
 
 + (BHB_INSTANCETYPE)showToView:(UIView *)view withItems:(NSArray *)array andSelectBlock:(DidSelectItemBlock)block{
-    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"open"];
+//    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"open"];
     [self viewNotEmpty:view];
     BHBPopView * popView = [[BHBPopView alloc]initWithFrame:view.bounds];
     popView.background.image = [self imageWithView:view];
@@ -157,7 +157,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"close"];
+//    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"close"];
     [self.bottomBar btnResetPosition];
     [self.bottomBar fadeOutWithTime:.25];
     [self hideItems];
@@ -180,7 +180,7 @@
     if (self.selectBlock) {
         self.selectBlock(item);
     }
-    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"open"];
+//    [[BHBPlaySoundTool sharedPlaySoundTool] playWithSoundName:@"open"];
     [self hide];
 }
 
