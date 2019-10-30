@@ -10,8 +10,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^BackClick)();
-typedef void (^CloseClick)();
+typedef void (^BackClick)(void);
+typedef void (^CloseClick)(void);
 
 @interface BHBBottomBar : UIView
 
