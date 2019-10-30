@@ -7,9 +7,9 @@
 //
 
 #import "BHBPopView.h"
-#import "UIImage+BHBEffects.h"
+//#import "UIImage+BHBEffects.h"
 #import "UIView+BHBAnimation.h"
-#import "UIImageView+BHBSetImage.h"
+//#import "UIImageView+BHBSetImage.h"
 //#import "BHBPlaySoundTool.h"
 #import "BHBBottomBar.h"
 #import "BHBCustomBtn.h"
