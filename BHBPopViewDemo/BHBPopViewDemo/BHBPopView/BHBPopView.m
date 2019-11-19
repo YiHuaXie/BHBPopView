@@ -52,7 +52,7 @@
         [self addSubview:iv];
         self.background = iv;
         
-        BHBBottomBar * bar = [[BHBBottomBar alloc]initWithFrame:CGRectMake(0, frame.size.height - BHBBOTTOMHEIGHT - SAFE_AREA_BOTTOM, frame.size.width, BHBBOTTOMHEIGHT)];
+        BHBBottomBar * bar = [[BHBBottomBar alloc]initWithFrame:CGRectMake(0, frame.size.height - BHBBOTTOMHEIGHT - SAFE_AREA_BOTTOM - 30, frame.size.width, BHBBOTTOMHEIGHT)];
         
         __weak typeof(self) weakSelf = self;
         bar.backClick = ^{
